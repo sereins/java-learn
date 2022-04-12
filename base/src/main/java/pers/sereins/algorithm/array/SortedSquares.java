@@ -35,6 +35,7 @@ public class SortedSquares {
             } else {
                 result[index] = nums[right] * nums[right];
                 right--;
+
             }
             index--;
         }

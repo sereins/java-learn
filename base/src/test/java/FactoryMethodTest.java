@@ -4,7 +4,6 @@ import pers.sereins.design.create.factory.builder.PhoneBuilder;
 
 public class FactoryMethodTest {
 
-
     public static void main(String[] args) {
 
         String pro = "phone";
