@@ -1,4 +1,3 @@
-import pers.sereins.algorithm.linked.LinkNode;
 import pers.sereins.algorithm.linked.LinkedList;
 
 public class LinkedListTest {
@@ -8,10 +7,7 @@ public class LinkedListTest {
 
         LinkedList linkedList = new LinkedList();
 
-        int[] nums = {1, 2, 3, 4, 5};
+        System.out.println("获取指定下标元素" + linkedList.get(5));
 
-        LinkNode linkNode = linkedList.initHeadLinked(nums);
-
-        linkedList.showLinkedList(linkNode);
     }
 }
