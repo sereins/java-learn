@@ -8,6 +8,8 @@ import pers.sereins.design.behavior.command.Receiver;
 import pers.sereins.design.behavior.duty.BigHandle;
 import pers.sereins.design.behavior.duty.MidHandle;
 import pers.sereins.design.behavior.duty.SmallHandle;
+import pers.sereins.design.behavior.iterator.ConcreteAggregate;
+import pers.sereins.design.behavior.iterator.Iterator;
 
 public class Behavior {
 
@@ -43,5 +45,22 @@ public class Behavior {
 
         invoker.setCommand(commandB);
         invoker.call();
+    }
+
+    // 迭代器测试
+    @Test
+    public void iterator(){
+
+        Object[] objs = {"hell","world","we"};
+
+        ConcreteAggregate concreteAggregate = new ConcreteAggregate(objs);
+
+        Iterator iterator = concreteAggregate.createIterator();
+
+        while (iterator.isNull()){
+            Object o = iterator.currentItem();
+            System.out.println(o);
+            iterator.next();
+        }
     }
 }
