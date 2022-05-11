@@ -10,6 +10,9 @@ import pers.sereins.design.behavior.duty.MidHandle;
 import pers.sereins.design.behavior.duty.SmallHandle;
 import pers.sereins.design.behavior.iterator.ConcreteAggregate;
 import pers.sereins.design.behavior.iterator.Iterator;
+import pers.sereins.design.behavior.mediator.ConcreteColleagueA;
+import pers.sereins.design.behavior.mediator.ConcreteColleagueB;
+import pers.sereins.design.behavior.mediator.ConcreteMediator;
 
 public class Behavior {
 
@@ -62,5 +65,22 @@ public class Behavior {
             System.out.println(o);
             iterator.next();
         }
+    }
+
+    // 中介者模式
+    @Test
+    public void mediator(){
+
+        ConcreteMediator concreteMediator = new ConcreteMediator();
+
+        ConcreteColleagueA concreteColleagueA = new ConcreteColleagueA();
+        ConcreteColleagueB concreteColleagueB = new ConcreteColleagueB();
+
+        concreteMediator.register(concreteColleagueA);
+        concreteMediator.register(concreteColleagueB);
+
+        concreteColleagueA.send();
+        System.out.println("-------------");
+        concreteColleagueB.send();
     }
 }
