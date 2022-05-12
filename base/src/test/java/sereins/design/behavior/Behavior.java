@@ -16,6 +16,10 @@ import pers.sereins.design.behavior.mediator.ConcreteMediator;
 import pers.sereins.design.behavior.memento.CareTaker;
 import pers.sereins.design.behavior.memento.Game;
 import pers.sereins.design.behavior.memento.Memento;
+import pers.sereins.design.behavior.observer.ConcreteSubject;
+import pers.sereins.design.behavior.observer.Observer1;
+import pers.sereins.design.behavior.observer.Observer2;
+import pers.sereins.design.behavior.observer.Observer3;
 
 public class Behavior {
 
@@ -111,4 +115,18 @@ public class Behavior {
         game.restoreGame(careTaker.getMemento(0));
         game.showScore();
     }
+
+    // 观察者模式
+    @Test
+    public void observer(){
+
+        ConcreteSubject concreteSubject = new ConcreteSubject();
+
+        concreteSubject.add(new Observer1());
+        concreteSubject.add(new Observer2());
+        concreteSubject.add(new Observer3());
+
+        concreteSubject.notifyObserver();
+    }
+
 }
