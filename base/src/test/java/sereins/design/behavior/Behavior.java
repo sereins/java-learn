@@ -20,6 +20,8 @@ import pers.sereins.design.behavior.observer.ConcreteSubject;
 import pers.sereins.design.behavior.observer.Observer1;
 import pers.sereins.design.behavior.observer.Observer2;
 import pers.sereins.design.behavior.observer.Observer3;
+import pers.sereins.design.behavior.state.Context;
+import pers.sereins.design.behavior.state.LowState;
 
 public class Behavior {
 
@@ -129,4 +131,16 @@ public class Behavior {
         concreteSubject.notifyObserver();
     }
 
+    // 状态模式测试
+    @Test
+    public void state(){
+
+        Context context = new Context();
+
+
+        context.add(30);
+        context.add(30);
+        context.add(30);
+        context.add(-90);
+    }
 }
