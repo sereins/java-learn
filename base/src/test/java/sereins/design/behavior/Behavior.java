@@ -13,6 +13,9 @@ import pers.sereins.design.behavior.iterator.Iterator;
 import pers.sereins.design.behavior.mediator.ConcreteColleagueA;
 import pers.sereins.design.behavior.mediator.ConcreteColleagueB;
 import pers.sereins.design.behavior.mediator.ConcreteMediator;
+import pers.sereins.design.behavior.memento.CareTaker;
+import pers.sereins.design.behavior.memento.Game;
+import pers.sereins.design.behavior.memento.Memento;
 
 public class Behavior {
 
@@ -82,5 +85,30 @@ public class Behavior {
         concreteColleagueA.send();
         System.out.println("-------------");
         concreteColleagueB.send();
+    }
+
+    // 备忘录模式
+    @Test
+    public void memento(){
+
+        // 管理器
+        CareTaker careTaker = new CareTaker();
+
+        // 游戏对象
+        Game game = new Game();
+
+        game.playGame();
+        game.playGame();
+
+        // 存储
+        Memento memento = game.saveProcess();
+        careTaker.saveMemento(memento);
+
+        game.exitGame();
+        game.showScore();
+
+        // 恢复状态
+        game.restoreGame(careTaker.getMemento(0));
+        game.showScore();
     }
 }
