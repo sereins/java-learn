@@ -27,6 +27,10 @@ import pers.sereins.design.behavior.strategy.StrategyB;
 import pers.sereins.design.behavior.strategy.StrategyContext;
 import pers.sereins.design.behavior.template.AbstractClass;
 import pers.sereins.design.behavior.template.ConcreteClass;
+import pers.sereins.design.behavior.visitor.ElementA;
+import pers.sereins.design.behavior.visitor.ElementB;
+import pers.sereins.design.behavior.visitor.ObjectsStructure;
+import pers.sereins.design.behavior.visitor.VisitorA;
 
 public class Behavior {
 
@@ -168,5 +172,17 @@ public class Behavior {
         AbstractClass abstractClass = new ConcreteClass();
 
         abstractClass.templateMethod();
+    }
+
+    // 访问者模式
+    @Test
+    public void visitor(){
+
+        ObjectsStructure objectsStructure = new ObjectsStructure();
+
+        objectsStructure.add(new ElementA());
+        objectsStructure.add(new ElementB());
+
+        objectsStructure.accept(new VisitorA());
     }
 }
