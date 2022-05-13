@@ -25,6 +25,8 @@ import pers.sereins.design.behavior.state.LowState;
 import pers.sereins.design.behavior.strategy.StrategyA;
 import pers.sereins.design.behavior.strategy.StrategyB;
 import pers.sereins.design.behavior.strategy.StrategyContext;
+import pers.sereins.design.behavior.template.AbstractClass;
+import pers.sereins.design.behavior.template.ConcreteClass;
 
 public class Behavior {
 
@@ -157,5 +159,14 @@ public class Behavior {
 
         strategyContext.setStrategy(new StrategyB());
         strategyContext.doSomething();
+    }
+
+    // 模版方法测试
+    @Test
+    public void template(){
+
+        AbstractClass abstractClass = new ConcreteClass();
+
+        abstractClass.templateMethod();
     }
 }
