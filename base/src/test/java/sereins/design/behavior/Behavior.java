@@ -22,6 +22,9 @@ import pers.sereins.design.behavior.observer.Observer2;
 import pers.sereins.design.behavior.observer.Observer3;
 import pers.sereins.design.behavior.state.Context;
 import pers.sereins.design.behavior.state.LowState;
+import pers.sereins.design.behavior.strategy.StrategyA;
+import pers.sereins.design.behavior.strategy.StrategyB;
+import pers.sereins.design.behavior.strategy.StrategyContext;
 
 public class Behavior {
 
@@ -137,10 +140,22 @@ public class Behavior {
 
         Context context = new Context();
 
-
         context.add(30);
         context.add(30);
         context.add(30);
         context.add(-90);
+    }
+
+    // 策略模式测试
+    @Test
+    public void strategy(){
+
+        StrategyContext strategyContext = new StrategyContext();
+
+        strategyContext.setStrategy(new StrategyA());
+        strategyContext.doSomething();
+
+        strategyContext.setStrategy(new StrategyB());
+        strategyContext.doSomething();
     }
 }
