@@ -6,7 +6,7 @@ import create.factoryMethod.ConcreteFactoryB;
 import create.factoryMethod.Product;
 import org.junit.jupiter.api.Test;
 
-public class Factory {
+public class FactoryTest {
 
     /**
      * 工厂方法的测试类
@@ -16,7 +16,6 @@ public class Factory {
         String factory = "B";
 
         AbstractFactory absFactory = getFactory(factory);
-
         Product product = absFactory.newProduct();
 
         product.show();
